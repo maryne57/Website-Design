@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Newsreader", ui-serif, Georgia, serif;
+
+  --color-offwhite: #FBFBF9;
+  --color-terracotta: #D98E73;
+  --color-chocolate: #4A3728;
+  --color-sand: #E8E2D9;
+  --color-sage: #8C9482;
+  --color-earth: #2D241E;
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-offwhite text-earth antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 bg-chocolate text-offwhite rounded-full font-sans text-sm tracking-widest uppercase transition-all hover:bg-earth hover:shadow-lg active:scale-95;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 border border-chocolate text-chocolate rounded-full font-sans text-sm tracking-widest uppercase transition-all hover:bg-chocolate hover:text-offwhite active:scale-95;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-24 md:py-32;
+  }
+
+  .editorial-title {
+    @apply text-5xl md:text-7xl lg:text-8xl leading-[0.9] italic font-light;
+  }
+} 
